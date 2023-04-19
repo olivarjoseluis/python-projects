@@ -10,16 +10,17 @@ def run():
     countries = list(map(lambda x: x['Country/Territory'], data))
     worldPopulationPercentage = list(
         map(lambda x: x['World Population Percentage'], data))
-    charts.generateBPieChart(countries, worldPopulationPercentage)
+    charts.generateBPieChart('South America',countries, worldPopulationPercentage)
 
-    country=input('Type a country: ')
+    country = input('Type a country: ')
+    name=country
 
-    result=utils.populationByCountry(data,country)
+    result = utils.populationByCountry(data, country)
 
-    if len(result)>0:
-        country=result[0]
-        labels,values=utils.getPopulation(country)
-        charts.generateBarChart(labels,values)
+    if len(result) > 0:
+        country = result[0]
+        labels, values = utils.getPopulation(country)
+        charts.generateBarChart(name, labels, values)
 
 
 if __name__ == '__main__':

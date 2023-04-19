@@ -15,12 +15,9 @@ def getPopulation(country):
 
 
 def populationByCountry(data, country):
-    print('COUNTRY', country)
-    # print('DATA', data)
-    result = list(filter(lambda item: item['Country/Territory'] == country,
-                         data))
-    print(result)
-    # print(result)
+    result = list(
+        filter(lambda item: item['Country/Territory'] == country, data))
+
     return result
 
 
@@ -30,3 +27,7 @@ def getWorldPopulationPercentage(data):
         result.append(
             {row['Country/Territory']: row['World Population Percentage']})
     return result
+
+
+def stringTypeId(string):
+    return string.lower().replace(' ', '-')

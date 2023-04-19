@@ -1,6 +1,6 @@
 # Game Project
 
-if you want to game my game, 😄 it's very easy
+if you want to play my game, 😄 it's very easy
 
 ```sh
 cd game

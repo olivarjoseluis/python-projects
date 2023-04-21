@@ -1,8 +1,21 @@
-# Game Project
+# Python Project
+```sh
+git clone git@github.com:olivarjoseluis/python-projects.git
+```
+
+## Game
 
 if you want to play my game, 😄 it's very easy
 
 ```sh
 cd game
+python3 main.py
+```
+
+## App Project
+```sh
+cd app
+source env/bin/activate
+pip3 install -r requirements.txt
 python3 main.py
 ```

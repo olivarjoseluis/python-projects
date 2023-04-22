@@ -1,19 +1,20 @@
 import read_csv
 import charts
 import utils
+import pandas as pd
 
 
 def run():
-    data = read_csv.readCsv('data.csv')
-    data = list(
-        filter(lambda item: item['Continent'] == 'South America', data))
-    countries = list(map(lambda x: x['Country/Territory'], data))
-    worldPopulationPercentage = list(
-        map(lambda x: x['World Population Percentage'], data))
-    charts.generateBPieChart('South America',countries, worldPopulationPercentage)
+    df = pd.read_csv('data.csv')
+    df = df[df['Continent'] == 'Europe']
 
+    countries = df['Country/Territory'].values
+    worldPopulationPercentage = df['World Population Percentage'].values
+
+    charts.generateBPieChart('Europe', countries, worldPopulationPercentage)
+    data = read_csv.readCsv('data.csv')
     country = input('Type a country: ')
-    name=country
+    name = country
 
     result = utils.populationByCountry(data, country)
 
